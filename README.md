@@ -73,7 +73,9 @@ Different account bucket sync
 * Service -> Compute -> LambdaFunction -> create lambda function 
 * create role -> add policy you created before.
 * add name and create role -> upload code (this code in jar or zip)
+
 ### add environment value
+
 * DestinationBucket		destination-bucket
 * DestinationAccessId		xxxxxxxx
 * DestinationAccessKey 	xxxxxxxxxxxxxxx
