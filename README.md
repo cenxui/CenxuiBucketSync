@@ -77,12 +77,12 @@ Sychronize different accounts buckets with AWS Lambda Function.
 ### add environment value
 
  ```
- DestinationBucket   destination-bucket
- DestinationAccessId   xxxxxxxx
- DestinationAccessKey  xxxxxxxxxxxxxxx
- DestinationBucketRegion region (ap-northeast-1)
- ResourceBucketRegion    region (ap-northeast-1)
- ResourceBucket   resource-bucket
+ DestinationBucket        destination-bucket
+ DestinationAccessId      xxxxxxxx
+ DestinationAccessKey     xxxxxxxxxxxxxxx
+ DestinationBucketRegion  ap-northeast-1
+ ResourceBucketRegion     ap-northeast-1
+ ResourceBucket           resource-bucket
  ```
 
 ### create resource bucket 
