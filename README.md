@@ -1,7 +1,7 @@
 # LambdaBucketSync
-Different account bucket sync
+Sychronize different accounts buckets with AWS Lambda Function.
 ## Destination account
-### create policy
+### create policy 
 * IAM-> Policies -> create policy -> select create your own policy 
 * add name in console and copy and paste to console.
 * rename YOUR_DESTINATION_BUCKET as your bucket name.
