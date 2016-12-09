@@ -33,8 +33,12 @@ Sychronize different accounts buckets with AWS Lambda Function.
 }
 ```
 ###create user
-* IAM -> User -> add user -> add access id and key (note it)
-* add permission -> add policy (You created before)
+
+* IAM -> User ->add user -> check Programmatic access ->  access id and key
+* next permission -> attach existing policies ( check You created before) -> next
+* Create user
+* note the access id and key or download
+
 ### create bucket
 * S3 -> create bucket YOUR_DESTINATION_BUCKET
 
@@ -70,12 +74,12 @@ Sychronize different accounts buckets with AWS Lambda Function.
 }
 ```
 ### create Lambda function
-* Service -> Compute -> LambdaFunction -> create lambda function 
-* create role -> add policy you created before.
-* add name and create role -> upload code (this code in jar or zip)
+* Service -> Compute -> LambdaFunction -> create lambda function
+* Configure lambda function -> choose runtime java8
+* Select code entry type ->upload from amazon s3
 
-### add environment value
 
+#### add environment value
  ```
  DestinationBucket        destination-bucket
  DestinationAccessId      xxxxxxxx
@@ -83,8 +87,14 @@ Sychronize different accounts buckets with AWS Lambda Function.
  DestinationBucketRegion  ap-northeast-1
  ResourceBucketRegion     ap-northeast-1
  ResourceBucket           resource-bucket
- ```
+```
+* handler.BucketSyncHandler
+* create custom role ->  allow 
+* next->create function
+* IAM -> role -> select role you created -> attach policy which you created before to role
 
 ### create resource bucket 
 * S3 -> create bucket YOUR_RESOURCE_BUCKET
-* Add event trigger Lambday function and set all put event 
+* Properties -> events-> Events->selest Object created (All)
+* Send to lambda function
+
