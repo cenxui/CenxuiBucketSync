@@ -30,17 +30,17 @@ public class BucketSyncHandler implements RequestHandler<S3Event, Object> {
     	
     	BasicAWSCredentials credentials =
     			new BasicAWSCredentials(
-    					System.getenv("destination access id"),
-    					System.getenv("destination access key"));
-    	destinationBucket = System.getenv("destination bucket");
+    					System.getenv("DestinationAccessId"),
+    					System.getenv("DestinationAccessKey"));
+    	destinationBucket = System.getenv("DestinationBucket");
     	
     	destinationS3 = new AmazonS3Client(credentials);
     	
     	destinationRegion = Region.getRegion(Regions.fromName(
-    			System.getenv("destination bucket region")));
+    			System.getenv("DestinationBucketRegion")));
     	resourceRegion = Region.getRegion(Regions.fromName(
-    			System.getenv("resource bucket region")));
-    	resourceBucket = System.getenv("resource bucket");
+    			System.getenv("ResourceBucketRegion")));
+    	resourceBucket = System.getenv("ResourceBucket");
     }
     
 	@Override
